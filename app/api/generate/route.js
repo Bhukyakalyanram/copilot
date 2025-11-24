@@ -4,12 +4,10 @@
 import { NextResponse } from 'next/server';
 import OpenAI from "openai";
 
-const OPENAI_API_KEY="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";
-
 // Initialize OpenAI with environment variable
 const client = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
-  apiKey:OPENAI_API_KEY // Store this in your .env.local file
+  apiKey:process.env.OPENAI_API_KEY // Store this in your .env.local file
 });
 
 export async function POST(request) {
